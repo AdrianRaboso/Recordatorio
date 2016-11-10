@@ -29,8 +29,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             aumentarTiempo();
 
             if (minutesPassed >= sliderCantidadTiempo.getValue()) {
-                sysTray.remove(trayIcon);
-                ventana.setVisible(true);
+                //sysTray.remove(trayIcon);
+                //ventana.setVisible(true);
                 timer.stop();
                 JOptionPane.showMessageDialog(ventana, JTextFieldObjetivoDiario.getText());
                 jLabelEtiquetaTiempo.setText("00:00");
@@ -42,10 +42,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     public VentanaPrincipal() {
         initComponents();
-        icono = new ImageIcon(this.getClass().getResource("/Recursos/wait.png"));
-        setIconImage(icono.getImage());
+        //icono = new ImageIcon(getClass().getResource("/Recursos/wait.png"));
+        //setIconImage(icono.getImage());
         setLocationRelativeTo(null);
-        instanciarTray();
+        //instanciarTray();
     }
 
     public void aumentarTiempo() {
@@ -76,7 +76,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     public void instanciarTray() {
-        trayIcon = new TrayIcon(icono.getImage(), JTextFieldObjetivoDiario.getText(), this.popup);
+        trayIcon = new TrayIcon(icono.getImage(), JTextFieldObjetivoDiario.getText(), popup);
         trayIcon.setImageAutoSize(true);
         sysTray = SystemTray.getSystemTray();
     }
