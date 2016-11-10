@@ -17,7 +17,7 @@ import javax.swing.UIManager;
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     private Frame ventana = this;
-    private ImageIcon icono;
+    private ImageIcon icono ;
     private TrayIcon trayIcon;
     private SystemTray sysTray;
     private int secondsPassed = 0;
@@ -34,6 +34,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 timer.stop();
                 JOptionPane.showMessageDialog(ventana, JTextFieldObjetivoDiario.getText());
                 jLabelEtiquetaTiempo.setText("00:00");
+                minutesPassed = 0;
+                secondsPassed = 0;
             }
         }
     });
@@ -41,7 +43,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
         icono = new ImageIcon(this.getClass().getResource("/Recursos/wait.png"));
-        this.setIconImage(icono.getImage());
+        setIconImage(icono.getImage());
         setLocationRelativeTo(null);
         instanciarTray();
     }
